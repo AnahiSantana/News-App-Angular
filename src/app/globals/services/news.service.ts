@@ -20,7 +20,7 @@ export class NewsService {
     if(!source){
       return this.http.get('http://localhost:3000/api/everything?q='+ q).toPromise();
     }
-      return this.http.get('http://localhost:3000/api/everything?q='+ q + '&source=' + source).toPromise();
+      return this.http.get('http://localhost:3000/api/everything?q='+ q + '&sources=' + source).toPromise();
   }
 
   getSources():Promise<any> {
