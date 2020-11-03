@@ -1,7 +1,15 @@
+
+<select name="" [(ngModel)]="pais" (change)=ngOnChanges()>
+    <option value="mx">México</option>
+    <option value="us">USA</option>
+    <option value="jp">Japón</option>
+</select>
+
 <div id="news-container"  class="grid">
-    <div class="xs-100 md-50 lg-33"  *ngFor="let item of news">
-        <h2>{{item.title}}</h2>
-        <p *ngIf="item.description">{{item.description}}</p>
-        <img *ngIf="item.urlToImage" src="{{item.urlToImage}}" alt="" style="max-width: 100%">
+    <div class="xs-100 md-50 lg-25"  *ngFor="let item of news">
+        <a href="{{item.url}}">
+            <h2>{{item.title}}</h2>
+            <img src="{{item.urlToImage || 'https://bitsofco.de/content/images/2018/12/broken-1.png'}}" alt="" style="max-width: 100%">
+        </a>
     </div>
 </div>

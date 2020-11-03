@@ -9,6 +9,7 @@ import { NewsService } from '../../globals/services/news.service';
 export class HeadlinesComponent implements OnInit, OnChanges {
 
   news:any[] = [];
+  pais:string= "mx";
  
   constructor(private newsService:NewsService) { 
     this.newsService = newsService;
@@ -22,9 +23,17 @@ export class HeadlinesComponent implements OnInit, OnChanges {
     }).catch(err => {
       console.log(err);
     });
-
   }
 
-  ngOnChanges() {}
+  
+  ngOnChanges() {
+    this.newsService.getHeadlines(this.pais)
+    .then(data => {
+      this.news = data;
+      console.log(data);
+    }).catch(err => {
+      console.log(err);
+    });
+  }
 
 }
