@@ -1,0 +1,10 @@
+<p>headlines works!</p>
+
+<ul>
+    <li *ngFor="let item of news">
+        <a href="{{item.url}}">
+            {{item.title}}
+            <img *ngIf="item.urlToImage" src="{{item.urlToImage}}" alt="news image">
+        </a>
+    </li>
+</ul>
