@@ -1,3 +1,4 @@
+<h1>Titulares</h1>
 
 <select name="" [(ngModel)]="pais" (change)=ngOnChanges()>
     <option value="mx">México</option>
@@ -9,7 +10,7 @@
     <div class="xs-100 md-50 lg-25"  *ngFor="let item of news">
         <a href="{{item.url}}">
             <h2>{{item.title}}</h2>
-            <img src="{{item.urlToImage || 'https://bitsofco.de/content/images/2018/12/broken-1.png'}}" alt="" style="max-width: 100%">
+            <img src="{{item.urlToImage || 'https://bitsofco.de/content/images/2018/12/broken-1.png'}}" alt="">
         </a>
     </div>
 </div>
